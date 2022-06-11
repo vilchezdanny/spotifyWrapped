@@ -1,2 +1,4 @@
-# spotifyRecap
-Using the Spotify API to recreate the annual recap. 
+# spotifyWrapped
+
+Using the Spotify API to recreate the annual wrapped
+
