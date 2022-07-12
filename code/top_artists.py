@@ -3,7 +3,6 @@ import pandas as pd
 from spotipy.oauth2 import SpotifyOAuth
 
 TOP_SCOPE = "user-top-read"
-LIBRARY_SCOPE = "user-library-read"
 
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=TOP_SCOPE))
@@ -43,4 +42,4 @@ columns = [
 ]
 
 top_artists_df = pd.DataFrame(top_artists, columns=columns)
-top_artists_df.to_csv("top_artists.csv")
+top_artists_df.to_csv("./data/top_artists.csv")

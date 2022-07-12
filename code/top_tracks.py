@@ -3,7 +3,6 @@ import pandas as pd
 from spotipy.oauth2 import SpotifyOAuth
 
 TOP_SCOPE = "user-top-read"
-LIBRARY_SCOPE = "user-library-read"
 
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=TOP_SCOPE))
@@ -22,10 +21,12 @@ for track in tracks:
     release_date = track["album"]["release_date"]
     duration = track["duration_ms"]
     song_popularity = track["popularity"]
-    track_uri = track["uri"]
     album_name = track["album"]["name"]
     album_img = track["album"]["images"][0]["url"]
+    track_uri = track["uri"]
+    artist_uri = track["artists"][0]["uri"]
     album_uri = track["album"]["uri"]
+
     top_tracks.append(
         [
             track_name,
@@ -33,9 +34,10 @@ for track in tracks:
             release_date,
             duration,
             song_popularity,
-            track_uri,
             album_name,
             album_img,
+            track_uri,
+            artist_uri,
             album_uri,
         ]
     )
@@ -46,9 +48,10 @@ columns = [
     "release_date",
     "duration",
     "song_popularity",
-    "track_uri",
     "album_name",
     "album_img",
+    "track_uri",
+    "artist_uri",
     "album_uri",
 ]
 
