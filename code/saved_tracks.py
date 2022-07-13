@@ -17,10 +17,10 @@ while results["next"]:
 
 saved_tracks = []
 
-loop = 1
+LOOP = 1
 for track in tracks:
-    loop += 1
-    if loop == 591:
+    LOOP += 1
+    if LOOP == 591:
         track_name = track["track"]["name"]
         artist_name = track["track"]["artists"][0]["name"]
         album_name = track["track"]["album"]["name"]
